@@ -82,7 +82,7 @@ PaperclipDemo::Application.configure do
   config.paperclip_defaults = {
     storage: :s3,
     s3_protocol: 'https',
-    s3_host_name: 's3-us-west-2.amazonaws.com',
+    s3_host_name: 's3-us-west-1.amazonaws.com',
     s3_credentials: {
       bucket: ENV.fetch("AWS_BUCKET"),
       access_key_id: ENV.fetch("AWS_ACCESS_KEY_ID"),
