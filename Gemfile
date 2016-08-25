@@ -9,6 +9,7 @@ gem "paperclip"
 gem "pg"
 gem "sass-rails"
 gem "uglifier"
+gem "rails_12factor"
 
 group :development do
   gem "web-console", "~> 2.0"
