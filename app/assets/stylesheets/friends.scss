@@ -27,7 +27,6 @@ body {
 }
 
 header {
-  background: transparent url(logo.png) no-repeat 40px 20px;
   margin: 30px auto 0px auto;
   padding: 0 40px;
   width: 1040px;
@@ -38,7 +37,7 @@ header {
     padding: 20px;
 
     h1 {
-      padding-left: 80px;
+      padding-left: 0px;
 
       a {
         color: $color-1;
