@@ -6,7 +6,7 @@ class UserMailer < BaseMandrillMailer
     }
     body = mandrill_template("new-space", merge_vars)
 
-    send_mail(user.email, subject, body)
+    send_mail(email, subject, body)
   end
 end
 
