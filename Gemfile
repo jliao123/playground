@@ -10,6 +10,7 @@ gem "pg"
 gem "sass-rails"
 gem "uglifier"
 gem "rails_12factor"
+gem "mandrill-api"
 
 group :development do
   gem "web-console", "~> 2.0"

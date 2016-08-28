@@ -78,6 +78,18 @@ PaperclipDemo::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
+  # Mandrill
+  config.action_mailer.smtp_settings = {
+    address: ENV.fetch("SMTP_ADDRESS"),
+    authentication: :plain
+    domain: ENV.fetch("SMTP_DOMAIN"),
+    enable_starttls_auto: true,
+    password: ENV.fetch("SMTP_PASSWORD"),
+    port: "587",
+    user_name: ENV.fetch("SMTP_USERNAME")
+  }
+  config.action_mailer.default_url_options = { host: ENV["SMTP_DOMAIN"] }
+
   # Amazon S3 settings for Paperclip uploads
   config.paperclip_defaults = {
     storage: :s3,

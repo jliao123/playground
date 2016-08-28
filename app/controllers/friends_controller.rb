@@ -24,6 +24,8 @@ class FriendsController < ApplicationController
   # POST /friends
   # POST /friends.json
   def create
+    BaseMandrillMailer.send_mail("jackieoliao@gmail.com", "test subject", "test body")
+
     @friend = Friend.new(friend_params)
 
     respond_to do |format|
