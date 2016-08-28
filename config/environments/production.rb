@@ -81,7 +81,7 @@ PaperclipDemo::Application.configure do
   # Mandrill
   config.action_mailer.smtp_settings = {
     address: ENV.fetch("SMTP_ADDRESS"),
-    authentication: :plain
+    authentication: "plain",
     domain: ENV.fetch("SMTP_DOMAIN"),
     enable_starttls_auto: true,
     password: ENV.fetch("SMTP_PASSWORD"),
