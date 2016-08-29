@@ -1,8 +1,8 @@
 class UserMailer < BaseMandrillMailer
-  def welcome(email, img_url)
+  def welcome(email, img_url, name)
     subject = "New request for quote"
     merge_vars = {
-      "FIRST_NAME" => "Testy Mc'Tester",
+      "FIRST_NAME" => name,
       "IMG_TEST" => img_url,
     }
     body = mandrill_template("new-space", merge_vars)
