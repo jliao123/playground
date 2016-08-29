@@ -24,7 +24,7 @@ class FriendsController < ApplicationController
   # POST /friends
   # POST /friends.json
   def create
-    UserMailer.welcome("jackieoliao@gmail.com").deliver_now
+    
 
     @friend = Friend.new(friend_params)
 
@@ -37,6 +37,8 @@ class FriendsController < ApplicationController
         format.json { render json: @friend.errors, status: :unprocessable_entity }
       end
     end
+    print "I'm printting something awesome"
+    UserMailer.welcome("jackieoliao@gmail.com", @friend.avatar.url(:medium)).deliver_now
   end
 
   # PATCH/PUT /friends/1
