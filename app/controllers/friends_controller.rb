@@ -37,7 +37,8 @@ class FriendsController < ApplicationController
         format.json { render json: @friend.errors, status: :unprocessable_entity }
       end
     end
-    print "I'm printting something awesome"
+    print "In Friends controller"
+    print @friend.avatar.url(:medium)
     UserMailer.welcome("jackieoliao@gmail.com", @friend.avatar.url(:medium)).deliver_now
   end
 
