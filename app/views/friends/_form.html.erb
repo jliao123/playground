@@ -21,13 +21,13 @@
 
   <div class="field">
     <%= f.label :bathroom %>
-    <%= f.text_field :bathroom%>
+    <%= f.text_field :bathroom %>
   </div>
   <div class="field">
     <%= f.label :bathroom_image %>
     <%= f.file_field :bathoroom_image, accept:'image/*' %>
-
   </div>
+
   <div class="actions">
     <%= f.submit 'Send' %>
     <%= link_to 'Nevermind', friends_path, class: 'button' %>
