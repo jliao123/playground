@@ -19,6 +19,14 @@
     <%= f.label :avatar %>
     <%= f.file_field :avatar, accept:'image/*' %>
 
+  <div class="field">
+    <%= f.label :bathroom %>
+    <%= f.text_field :bathroom%>
+  </div>
+  <div class="field">
+    <%= f.label :bathroom_image %>
+    <%= f.file_field :bathoroom_image, accept:'image/*' %>
+
   </div>
   <div class="actions">
     <%= f.submit 'Send' %>
