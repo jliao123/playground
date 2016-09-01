@@ -10,8 +10,10 @@ class FriendsController < ApplicationController
   # GET /friends/1
   # GET /friends/1.json
   def show
+    
   end
 
+  
   # GET /friends/new
   def new
     @friend = Friend.new
@@ -24,8 +26,6 @@ class FriendsController < ApplicationController
   # POST /friends
   # POST /friends.json
   def create
-    
-
     @friend = Friend.new(friend_params)
 
     respond_to do |format|
@@ -69,7 +69,9 @@ class FriendsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_friend
-      @friend = Friend.find(params[:id])
+   
+        @friend = Friend.find(params[:id])
+  
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

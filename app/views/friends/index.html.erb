@@ -4,4 +4,5 @@
   <%= render @friends %>
 </section>
 
-<h2>Send this application to Edward <%= link_to 'Submit', "http://google.com", class: 'new-friend' %></h2>
+<h2>Send this application to Edward <%= link_to "Submit", {:controller => :complete, :action =>:index}, class: 'new-friend' %></h2>
+
