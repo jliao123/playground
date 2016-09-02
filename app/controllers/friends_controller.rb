@@ -39,7 +39,7 @@ class FriendsController < ApplicationController
     end
     print "In Friends controller"
     print @friend.avatar.url(:medium)
-    UserMailer.welcome("jackieoliao@gmail.com", @friend.avatar.url(:medium), @friend.name).deliver_now
+   
   end
 
   # PATCH/PUT /friends/1
