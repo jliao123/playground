@@ -4,8 +4,9 @@ class FriendsController < ApplicationController
   # GET /friends
   # GET /friends.json
   def index
-    @friends = Friend.all
+    # @friends = Friend.all
     @user = Appid.find_by_session(request.session_options[:id])
+
     if @user == nil #if it's a new app, save into "Appid"
       redirect_to "?app=" + request.session_options[:id]
       @user = Appid.new
@@ -15,6 +16,16 @@ class FriendsController < ApplicationController
       puts @user
     end
 
+    #build view so you only see what's relevant to the user 
+    @friends = Array.new
+    @user.spaceids.each do |p| #iterate though each value of the array to build the friend
+      puts "p: "
+      puts p
+      @friends.push(Friend.find(p))
+      puts "@Friends"
+      puts @friends
+    end
+    
   end
 
   # GET /friends/1

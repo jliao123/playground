@@ -1,7 +1,9 @@
 <h2>Add room to your quote <%= link_to 'New', new_friend_path, class: 'new-friend' %></h2>
 
 <section id="friends">
-  <%= render @friends %>
+  <% if @friends != nil %>
+  	<%= render @friends %>
+  <% end %>
 </section>
 
 <h2>Send this application to Edward <%= link_to "Submit", {:controller => :complete, :action =>:index}, class: 'new-friend' %></h2>
