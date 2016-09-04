@@ -9,4 +9,5 @@ class Friend < ActiveRecord::Base
     square: '200x200#',
     medium: '300x300>'
   }
+ 
 end

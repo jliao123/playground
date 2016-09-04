@@ -5,6 +5,16 @@ class FriendsController < ApplicationController
   # GET /friends.json
   def index
     @friends = Friend.all
+    @user = Appid.find_by_session(request.session_options[:id])
+    if @user == nil #if it's a new app, save into "Appid"
+      redirect_to "?app=" + request.session_options[:id]
+      @user = Appid.new
+      @user.session = request.session_options[:id]
+      @user.save
+      puts "New user created!"
+      puts @user
+    end
+
   end
 
   # GET /friends/1
@@ -28,6 +38,16 @@ class FriendsController < ApplicationController
   def create
     @friend = Friend.new(friend_params)
 
+    # puts "In Friends controller: create"
+    # puts @friend.avatar.url(:medium)
+
+    @friend.save
+    friend_id = @friend.id
+
+    @user = Appid.find_by_session(request.session_options[:id])
+    @user.spaceids.push(friend_id)
+    @user.save
+
     respond_to do |format|
       if @friend.save
         format.html { redirect_to @friend, notice: 'Friend was successfully created.' }
@@ -37,8 +57,8 @@ class FriendsController < ApplicationController
         format.json { render json: @friend.errors, status: :unprocessable_entity }
       end
     end
-    print "In Friends controller"
-    print @friend.avatar.url(:medium)
+
+    
    
   end
 
@@ -59,6 +79,9 @@ class FriendsController < ApplicationController
   # DELETE /friends/1
   # DELETE /friends/1.json
   def destroy
+    @user = Appid.find_by_session(request.session_options[:id])
+    @user.spaceids = @user.spaceids - [@friend.id]
+    @user.save
     @friend.destroy
     respond_to do |format|
       format.html { redirect_to friends_url }
@@ -69,9 +92,7 @@ class FriendsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_friend
-   
         @friend = Friend.find(params[:id])
-  
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160829055051) do
+ActiveRecord::Schema.define(version: 20160904165646) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "appids", force: :cascade do |t|
+    t.string   "session"
+    t.string   "name"
+    t.string   "email"
+    t.integer  "spacecount"
+    t.integer  "spaceids",   default: [],              array: true
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
 
   create_table "friends", force: :cascade do |t|
     t.string   "name"
@@ -24,7 +34,6 @@ ActiveRecord::Schema.define(version: 20160829055051) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.string   "bathroom"
   end
 
 end

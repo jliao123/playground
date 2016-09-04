@@ -4,6 +4,9 @@ PaperclipDemo::Application.routes.draw do
   end
 
   resources :friends
-   	root :to => 'friends#index'
+  
+  get 'friends/index'
+  post 'friends/index'
+  root :to => 'friends#index'
    	
 end
