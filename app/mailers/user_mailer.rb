@@ -1,10 +1,6 @@
 class UserMailer < BaseMandrillMailer
   def welcome(email, img_url, name)
     subject = "New request for quote"
-    auto_text = true
-    inline_css = true
-    merge = true
-    merge_language = handlebars 
     merge_vars = {
        "name": "products",
           "content": [
