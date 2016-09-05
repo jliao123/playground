@@ -2,7 +2,7 @@ require "prawn"
 
 class CompleteController < ApplicationController
   	def index
-  		print "I'm here"
+  		puts "I'm here"
   		
 
   		@user = Appid.find_by_session(request.session_options[:id]) #find user
@@ -20,12 +20,12 @@ class CompleteController < ApplicationController
   		# UserMailer.welcome("jackieoliao@gmail.com", @friend.avatar.url(:medium), @friend.name).deliver_now
 
   		Prawn::Document.generate("#{Rails.root}/public/pdfs/myfile.pdf") do |pdf|	
+
+  		counter = 0	
 			@friends.each do |p|
-				puts "P"
-				puts p-1
-				index = p-1
 				pdf.text "Hello World"
-				pdf.image open @friends[index].avatar.url(:medium)
+				pdf.image open @friends[counter].avatar.url(:medium)
+				counter = counter + 1
 			end
 
 	  		redirect_to '/pdfs/myfile.pdf'
