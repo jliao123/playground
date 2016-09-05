@@ -21,8 +21,9 @@ class CompleteController < ApplicationController
 
   		Prawn::Document.generate("#{Rails.root}/public/pdfs/myfile.pdf") do |pdf|	
 			@friends.each do |p|
+				index = p - 1
 				pdf.text "Hello World"
-				pdf.image open @friends[p-1].avatar.url(:medium)
+				pdf.image open @friends[index].avatar.url(:medium)
 			end
 
 	  		redirect_to '/pdfs/myfile.pdf'
