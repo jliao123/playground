@@ -14,7 +14,7 @@ class BaseMandrillMailer < ActionMailer::Base
 
   def mandrill_template(template_name, attributes)
     mandrill = Mandrill::API.new(ENV["SMTP_PASSWORD"])
-    merge_language = handlebars
+    merge_language = "handlebars"
     merge_vars = attributes.map do |key, value|
       { name: key, content: value }
 
