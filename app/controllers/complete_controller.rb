@@ -19,14 +19,13 @@ class CompleteController < ApplicationController
 
   		# UserMailer.welcome("jackieoliao@gmail.com", @friend.avatar.url(:medium), @friend.name).deliver_now
 
-  		Prawn::Document.generate("#{Rails.root}/public/pdfs/myfile.pdf") do |pdf|
-  			
-		@friends.each do |p|
-			pdf.text "Hello World"
-			pdf.image open @friends[p].avatar.url(:medium)
-		end
+  		Prawn::Document.generate("#{Rails.root}/public/pdfs/myfile.pdf") do |pdf|	
+			@friends.each do |p|
+				pdf.text "Hello World"
+				pdf.image open @friends[p-1].avatar.url(:medium)
+			end
 
-  		redirect_to '/pdfs/myfile.pdf'
+	  		redirect_to '/pdfs/myfile.pdf'
 		end
   	end
 end
