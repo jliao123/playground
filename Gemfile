@@ -12,6 +12,7 @@ gem "uglifier"
 gem "rails_12factor"
 gem "mandrill-api"
 gem "prawn"
+gem 'mandrill_mailer'
 
 group :development do
   gem "web-console", "~> 2.0"
