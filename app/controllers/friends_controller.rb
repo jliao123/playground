@@ -8,7 +8,7 @@ class FriendsController < ApplicationController
     @user = Appid.find_by_session(request.session_options[:id])
 
     if @user == nil #if it's a new app, save into "Appid"
-      redirect_to "?app=" + request.session_options[:id]
+      #redirect_to "?app=" + request.session_options[:id]
       @user = Appid.new
       @user.session = request.session_options[:id]
       @user.save
@@ -25,7 +25,7 @@ class FriendsController < ApplicationController
       puts "@Friends"
       puts @friends
     end
-    
+
   end
 
   # GET /friends/1
