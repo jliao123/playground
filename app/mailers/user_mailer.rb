@@ -3,7 +3,7 @@ class UserMailer < BaseMandrillMailer
     subject = "New request for quote"
     merge_vars = {
       "FIRST_NAME" => "test name",
-      "USER_URL" => "test url,
+      "USER_URL" => "test url",
     }
     body = mandrill_template("new-space", merge_vars)
     print "In UserMailer"
