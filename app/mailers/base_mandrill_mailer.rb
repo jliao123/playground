@@ -9,7 +9,7 @@ class BaseMandrillMailer < ActionMailer::Base
   private
 
   def send_mail(email, subject, body)
-    mail(to: email, subject: subject, body: body, content_type: "text/html")
+    mail(to: email, subject: subject, body: body, content_type: "text/html", merge_language: "handlebars")
   end
 
   def mandrill_template(template_name, attributes)
@@ -17,6 +17,8 @@ class BaseMandrillMailer < ActionMailer::Base
 
     merge_vars = attributes.map do |key, value|
       { name: key, content: value }
+
+
 
     end
 
