@@ -13,7 +13,7 @@ class CompleteController < ApplicationController
 	      puts "p: "
 	      puts p
 	      @friends.push(Friend.find(p))
-	      puts "@Friends"
+	      puts "@friends"
 	      puts @friends
 	    end
 
@@ -23,7 +23,7 @@ class CompleteController < ApplicationController
   			
 		@friends.each do |p|
 			pdf.text "Hello World"
-			pdf.image open @friends(p).avatar.url(:medium)
+			pdf.image open @friends[p].avatar.url(:medium)
 		end
 
   		redirect_to '/pdfs/myfile.pdf'
