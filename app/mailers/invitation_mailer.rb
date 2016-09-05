@@ -19,7 +19,7 @@ class InvitationMailer < MandrillMailer::TemplateMailer
       inline_css: true,
       attachments: [
                     {
-                      content: File.read(File.expand_path('pdfs/myfile.pdf')),
+                      content: File.read(File.expand_path('public/pdfs/myfile.pdf')),
                       name: 'myfile.pdf',
                       type: 'application/pdf'
                     }
