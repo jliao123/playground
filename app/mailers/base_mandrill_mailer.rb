@@ -17,6 +17,7 @@ class BaseMandrillMailer < ActionMailer::Base
 
     merge_vars = attributes.map do |key, value|
       { name: key, content: value }
+
     end
 
     mandrill.templates.render(template_name, [], merge_vars)["html"]
