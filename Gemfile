@@ -11,6 +11,7 @@ gem "sass-rails"
 gem "uglifier"
 gem "rails_12factor"
 gem "mandrill-api"
+gem "prawn"
 
 group :development do
   gem "web-console", "~> 2.0"

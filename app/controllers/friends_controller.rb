@@ -24,6 +24,7 @@ class FriendsController < ApplicationController
       @friends.push(Friend.find(p))
       puts "@Friends"
       puts @friends
+
     end
 
   end
