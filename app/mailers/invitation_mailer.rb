@@ -12,8 +12,8 @@ class InvitationMailer < MandrillMailer::TemplateMailer
         # to: invitation.email,
         # to: { email: invitation.email, name: 'Honored Guest' },
       vars: {
-        'OWNER_NAME' => invitation.owner_name,
-        'PROJECT_NAME' => invitation.project_name
+        'OWNER_NAME' => 'n/a',
+        'PROJECT_NAME' => 'n/a'
       },
       important: true,
       inline_css: true,
