@@ -13,6 +13,7 @@ gem "rails_12factor"
 gem "mandrill-api"
 gem "prawn"
 gem 'mandrill_mailer'
+gem "twitter-bootstrap-rails"
 
 group :development do
   gem "web-console", "~> 2.0"
