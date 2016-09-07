@@ -7,7 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 
-<nav class="navbar navbar-default">
+
+<!-- <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">
@@ -16,22 +17,14 @@
     </div>
   </div>
 </nav>
+ -->
 
 
 <body>
-  <header>
-    <div class="header-wrap">
-      <h1><%= link_to 'sftip test', root_path %></h1>
-    </div>
-  </header>
-
-  <div id="main-wrap">
+  <div class="container">
     <%= yield %>
   </div>
 
-  <footer>
-    <!-- <p id="copyright">test</p> -->
-  </footer>
   <%= javascript_include_tag "application" %>
 </body>
 </html>
