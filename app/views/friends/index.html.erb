@@ -1,6 +1,8 @@
 <div class="page-header text-center">
+  <%= image_tag 'ed.png',  class: 'img-circle', style: 'width:50px;'%>
   <h1><strong> Get a quote </strong><h1>
-  <h3>Add your photos of your space and when you're done, just hit submit and you'll get a quote from Edward within 1 business day!</h3>
+
+  <h3>Add your photos of your space and when you're done, just hit submit and you'll get a quote from Edward within 1 business day.</h3>
 </div>
 
 <% if notice != nil %>
@@ -17,6 +19,7 @@
 </section>
 
 <h2>Send these to Edward <%= link_to "Submit", {:controller => :complete, :action =>:index}, class: 'btn btn-success' %></h2>
+<h5> Have questions? Give me a call at (206) 288-9823<h5>	
 
 
 <%= print "Session id coming from index: " %>

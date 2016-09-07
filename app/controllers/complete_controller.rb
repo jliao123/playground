@@ -34,6 +34,6 @@ class CompleteController < ApplicationController
 
 		# UserMailer.welcome("jackieoliao@gmail.com", @friend.avatar.url(:medium), @friend.name).deliver_now
 		InvitationMailer.invite().deliver_now
-		redirect_to '/pdfs/myfile.pdf'
+		# redirect_to '/pdfs/myfile.pdf'
   	end
 end
