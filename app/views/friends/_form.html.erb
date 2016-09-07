@@ -45,7 +45,7 @@
 
   <div class="form-group">
     <button type="button" class="btn btn-default" onclick= "startProgress()"> click me </button>
-    <%= f.submit 'Add', class: 'btn btn-primary', onclick: 'startProgress()' %>
+    <%= f.submit 'Add', class: 'btn btn-primary', onclick: 'return startProgress()' %>
     <%= link_to 'Nevermind', friends_path, class: 'btn btn-default' %>
   </div>
 <% end %>
@@ -71,6 +71,7 @@
         }
         $bar.text($bar.width() / 4 + "%");
     }, 1000);
+    return
   }
 </script>
 
