@@ -23,7 +23,8 @@ class CompleteController < ApplicationController
 
   		counter = 0	
 			@friends.each do |p|
-				pdf.text "Hello World"
+				pdf.text @friends[counter].name
+				pdf.text @friends[counter].ask
 				pdf.image open @friends[counter].avatar.url(:medium)
 				counter = counter + 1
 			end

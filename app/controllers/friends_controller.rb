@@ -18,12 +18,15 @@ class FriendsController < ApplicationController
 
     #build view so you only see what's relevant to the user 
     @friends = Array.new
-    @user.spaceids.each do |p| #iterate though each value of the array to build the friend
-      puts "p: "
-      puts p
-      @friends.push(Friend.find(p))
-      puts "@Friends"
-      puts @friends
+
+    if @user.spaceids != [] #only if not empty
+      @user.spaceids.each do |p| #iterate though each value of the array to build the friend
+        puts "p: "
+        puts p
+        @friends.push(Friend.find(p))
+        puts "@Friends"
+        puts @friends
+      end
     end
 
   end
@@ -61,7 +64,7 @@ class FriendsController < ApplicationController
 
     respond_to do |format|
       if @friend.save
-        format.html { redirect_to @friend, notice: 'Friend was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Room was successfully added.' }
         format.json { render action: 'show', status: :created, location: @friend }
       else
         format.html { render action: 'new' }
@@ -108,6 +111,6 @@ class FriendsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def friend_params
-      params.require(:friend).permit(:avatar, :name)
+      params.require(:friend).permit(:avatar, :name, :ask)
     end
 end

@@ -1,10 +1,14 @@
 <div class="page-header text-center">
-  <h1><strong> A new quote </strong><h1>
-  <h3>This app helps you snap pictures of the work you want done. Add your photos and when you're done, just hit submit and you'll hear back within 24 hours!</h3>
+  <h1><strong> Get a quote </strong><h1>
+  <h3>Add your photos of your space and when you're done, just hit submit and you'll get a quote from Edward within 1 business day!</h3>
 </div>
 
+<% if notice != nil %>
+	<div class="alert alert-success alert-dismissible" role="alert" id="notice"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>  </button> <%= notice %></div>
+<% end %>
 
-<h2>Add a picture <%= link_to 'Add', new_friend_path, class: 'new-friend' %></h2>
+
+<h2>Add a picture <%= link_to 'Add', new_friend_path, class: 'btn btn-primary' %></h2>
 
 <section id="friends">
   <% if @friends != nil %>
@@ -12,18 +16,18 @@
   <% end %>
 </section>
 
-<h2>Send these to Edward <%= link_to "Submit", {:controller => :complete, :action =>:index}, class: 'new-friend' %></h2>
+<h2>Send these to Edward <%= link_to "Submit", {:controller => :complete, :action =>:index}, class: 'btn btn-success' %></h2>
 
 
 <%= print "Session id coming from index: " %>
 <%= print params[:session] %>
 
-<div class="row">
+<!-- <div class="row">
   <div class="col-md-12">
   		<img src="https://c1.staticflickr.com/9/8689/17515730792_57ce00bb60_b.jpg" class="img-responsive center-block" alt="...">
   </div>
 </div>
-
+ -->
 
 
 

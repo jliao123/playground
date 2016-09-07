@@ -11,16 +11,46 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label "Name" %>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label "Photo" %>
-    <%= f.file_field :avatar, accept:'image/*' %>
 
-  <div class="actions">
-    <%= f.submit 'Add' %>
-    <%= link_to 'Nevermind', friends_path, class: 'button' %>
+  <div class="form-group">
+    <%= f.label "Name" %>
+    <%= f.text_field :name, class: 'form-control', placeholder: 'Name of space', required: 'true'%>
   </div>
+
+  <div class="form-group">
+    <%= f.label "What you want done" %>
+    <%= f.text_area :ask, class: 'form-control', placeholder: 'Tell us your vision for this space?', required: 'true'%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Photo" %>
+    <%= f.file_field :avatar, accept:'image/*', class: 'form-control-file'%>
+  </div>
+
+
+<!--   <div class="radio">
+    <label>
+      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+      This is a picture of my room or space
+    </label>
+  </div>
+
+  <div class="radio">
+    <label>
+      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+      This is what I want
+    </label>
+  </div> -->
+
+
+  <div class="form-group">
+    <%= f.submit 'Add', class: 'btn btn-primary' %>
+    <%= link_to 'Nevermind', friends_path, class: 'btn btn-default' %>
+  </div>
+
+
+
+
 <% end %>
+
+
