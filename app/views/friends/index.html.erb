@@ -10,7 +10,9 @@
 <% end %>
 
 
-<h2>Add a picture <%= link_to 'Add', new_friend_path, class: 'btn btn-primary' %></h2>
+<h2>Add a picture</h2>
+
+<%= link_to 'Add a picture', new_friend_path, class: 'btn btn-block btn-primary' %>
 
 <section id="friends">
   <% if @friends != nil %>
@@ -18,7 +20,8 @@
   <% end %>
 </section>
 
-<h2>Send these to Edward <%= link_to "Submit", {:controller => :complete, :action =>:index}, class: 'btn btn-success' %></h2>
+<h2>Get a quote</h2>
+<%= link_to "Send this to Edward", {:controller => :complete, :action =>:index}, class: 'btn btn-block btn-success' %>
 <h5> Have questions? Give me a call at (206) 288-9823<h5>	
 
 

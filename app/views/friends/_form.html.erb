@@ -45,15 +45,15 @@
 
   <div class="form-group">
  <!--    <button type="button" class="btn btn-default" onclick= "startProgress()"> click me </button> -->
-    <%= f.submit 'Add', type: 'submit', class: 'btn btn-primary', onclick: 'startProgress();' %>
-    <%= link_to 'Nevermind', friends_path, class: 'btn btn-default' %>
+    <%= f.submit 'Add', type: 'submit', class: 'btn btn-block btn-primary', onclick: 'startProgress();' %>
+    <%= link_to 'Nevermind', friends_path, class: 'btn btn-block btn-default' %>
   </div>
 
 
 <% end %>
 
 <div class="progress progress-striped active" style="margin-top: 30px;
-    width: 400px;">
+    width: 100%;">
     <div class="progress-bar" style="width: 0%;"></div>
 </div>
 
