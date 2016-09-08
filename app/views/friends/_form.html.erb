@@ -44,12 +44,10 @@
 
 
   <div class="form-group">
-    <button type="button" class="btn btn-default" onclick= "startProgress()"> click me </button>
+    <!-- <button type="button" class="btn btn-default" onclick= "startProgress()"> click me </button> -->
     <%= f.submit 'Add', type: 'submit', class: 'btn btn-block btn-primary', onclick: 'startProgress();' %>
     <%= link_to 'Nevermind', friends_path, class: 'btn btn-block btn-default' %>
   </div>
-
-
 
 
 <div class="progress progress-striped active" style="margin-top: 30px;
@@ -57,13 +55,10 @@
     <div class="progress-bar" style="width: 0%;"></div>
 </div>
 
-<% end %>
-
 <script type="text/javascript">
   function startProgress() {
     var progress = setInterval(function () {
         var $bar = $('.progress-bar');
-
         if ($bar.width() >= 400) {
             clearInterval(progress);
             $('.progress').removeClass('active');
@@ -74,6 +69,8 @@
     }, 1000);
   }
 </script>
+
+<% end %>
 
 
 
