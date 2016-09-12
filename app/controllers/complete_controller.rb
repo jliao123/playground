@@ -34,11 +34,7 @@ class CompleteController < ApplicationController
 			@friends.each do |p|
 				pdf.text @friends[counter].name
 				pdf.text @friends[counter].ask
-				
-		
-				pdf.image open @friends[counter].avatar.url(:original)?
-		
-				
+				pdf.image open @friends[counter].avatar.url(:original)
 				counter = counter + 1
 			end
 
