@@ -34,8 +34,8 @@ class CompleteController < ApplicationController
 			@friends.each do |p|
 				pdf.text @friends[counter].name
 				pdf.text @friends[counter].ask
-
-				if @friends[counter].avatar.url != nil
+				puts @friends[counter].avatar.url
+				if @friends[counter].avatar.url != "/avatars/original/missing.png"
  					pdf.image open @friends[counter].avatar.url(:original)
  				end
 				
