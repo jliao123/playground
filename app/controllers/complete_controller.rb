@@ -41,8 +41,7 @@ class CompleteController < ApplicationController
 
 		# UserMailer.welcome("jackieoliao@gmail.com", @friend.avatar.url(:medium), @friend.name).deliver_now
 
-		#this is most recent
-		# InvitationMailer.invite().deliver_now
+		InvitationMailer.invite().deliver_now
 
 
 
