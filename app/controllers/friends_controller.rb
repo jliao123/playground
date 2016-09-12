@@ -64,7 +64,7 @@ class FriendsController < ApplicationController
 
     respond_to do |format|
       if @friend.save
-        format.html { redirect_to root_path, notice: 'Success! Add more rooms or submit.' }
+        format.html { redirect_to root_path, notice: 'Success! Add more rooms or press submit below.' }
         format.json { render action: 'show', status: :created, location: @friend }
       else
         format.html { render action: 'new' }
