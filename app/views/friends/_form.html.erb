@@ -27,25 +27,9 @@
     <%= f.file_field :avatar, accept:'image/*', class: 'form-control-file'%>
   </div>
 
-
-<!--   <div class="radio">
-    <label>
-      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-      This is a picture of my room or space
-    </label>
-  </div>
-
-  <div class="radio">
-    <label>
-      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-      This is what I want
-    </label>
-  </div> -->
-
-
   <div class="form-group">
-    <%= f.submit 'Add', class: 'btn btn-primary' %>
-    <%= link_to 'Nevermind', friends_path, class: 'btn btn-default' %>
+    <%= f.submit 'Add', class: 'btn btn-block btn-primary' %>
+    <%= link_to 'Nevermind', friends_path, class: 'btn btn-block btn-default' %>
   </div>
 
 
