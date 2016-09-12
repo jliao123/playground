@@ -30,7 +30,25 @@
 
 <h2>Ready to get a quote? </h2>
 
-<%= link_to "Submit", {:controller => :complete, :action =>:index}, class: 'btn btn-block btn-success' %>
+
+<%= form_for(@user, :url => url_for(:controller=> :complete, :action=> :index), :method => 'get') do |f| %>  
+  <div class="form-group">
+    <%= f.label "Your name" %>
+    <%= f.text_field :name, class: 'form-control', placeholder: 'First name', required: 'true'%>
+  </div>
+
+   <div class="form-group">
+    <%= f.label "Email OR phone number" %>
+    <%= f.text_field :email, class: 'form-control', placeholder: 'Leave a number or email for us to contact you', required: 'true'%>
+  </div>
+
+  <div class="form-group">
+   <button type="submit" id="contact-submit" class="btn btn-success btn-block save" >  Submit </button>
+  </div>
+
+<% end %>
+
+
 
 <% end %>
 
@@ -39,6 +57,33 @@
 
 <%= print "Session id coming from index: " %>
 <%= print params[:session] %>
+
+<script type="text/javascript">
+
+$( document ).ready(function() {
+
+  var $input = $('input:text'),
+  $register = $('#contact-submit');
+
+  $register.attr('disabled', true);
+  $input.keyup(function() {
+      var trigger = false;
+      $input.each(function() {
+          if (!$(this).val()) {
+              trigger = true;
+          }
+      });
+      trigger ? $register.attr('disabled', true) : $register.removeAttr('disabled');
+  });
+
+});
+  
+
+
+
+
+
+</script>
 
 
 
