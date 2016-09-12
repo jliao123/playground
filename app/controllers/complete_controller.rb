@@ -8,9 +8,11 @@ class CompleteController < ApplicationController
 
   		@user = Appid.find_by_session(request.session_options[:id]) #find user
 
-  		@user.email = params[:email]
-  		@user.name = params[:name]
+  		@user.email = params[:appid][:email]
+  		@user.name = params[:appid][:name]
   		@user.save
+
+  		# pry
   		
   		@friends = Array.new
 

@@ -14,6 +14,7 @@ gem "mandrill-api"
 gem "prawn"
 gem 'mandrill_mailer'
 gem "twitter-bootstrap-rails"
+gem "pry"
 
 group :development do
   gem "web-console", "~> 2.0"
