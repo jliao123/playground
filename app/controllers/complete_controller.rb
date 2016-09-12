@@ -34,7 +34,11 @@ class CompleteController < ApplicationController
 			@friends.each do |p|
 				pdf.text @friends[counter].name
 				pdf.text @friends[counter].ask
-				pdf.image open @friends[counter].avatar.url(:original)
+
+				if @friends[counter].avatar.url != nil
+ 					pdf.image open @friends[counter].avatar.url(:original)
+ 				end
+				
 				counter = counter + 1
 			end
 
@@ -43,7 +47,7 @@ class CompleteController < ApplicationController
 
 		# UserMailer.welcome("jackieoliao@gmail.com", @friend.avatar.url(:medium), @friend.name).deliver_now
 
-		InvitationMailer.invite().deliver_now
+		# InvitationMailer.invite().deliver_now
 
 
 
