@@ -10,10 +10,11 @@
 <% end %>
 
 
-<h2>Add a picture</h2>
+<!-- <h2>Add a picture</h2> -->
 
-<%= link_to 'Add a picture', new_friend_path, class: 'btn btn-block btn-primary' %>
+<%= link_to '+ Add a picture', new_friend_path, class: 'btn btn-block btn-primary' %>
 
+<br>
 
 <section id="friends">
   <% if @friends != nil %>
@@ -21,22 +22,23 @@
   <% end %>
 </section>
 
-<h2>Send these to Edward </h2>
+
+<% if @friends.count >= 1 %>
+
+<br>
+<br>
+
+<h2>Ready to get a quote? </h2>
 
 <%= link_to "Submit", {:controller => :complete, :action =>:index}, class: 'btn btn-block btn-success' %>
+
+<% end %>
 
 <h5> Have questions? Give me a call at (206) 288-9823<h5>	
 
 
 <%= print "Session id coming from index: " %>
 <%= print params[:session] %>
-
-<!-- <div class="row">
-  <div class="col-md-12">
-  		<img src="https://c1.staticflickr.com/9/8689/17515730792_57ce00bb60_b.jpg" class="img-responsive center-block" alt="...">
-  </div>
-</div>
- -->
 
 
 

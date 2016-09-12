@@ -1,13 +1,8 @@
 <div class="friend" id="<%= friend.id %>">
   <div class="thumbnail">
-    <%= link_to friend do %>
-      <%= image_tag friend.avatar.url(:medium) %>
-    <% end %>
+     <%= image_tag friend.avatar.url(:original) %>
   </div>
 
-  <h3><%= friend.name %></h3>
-  <h3 class="friend-name"><%= friend.ask %></h3>
-  <%= link_to 'Show', friend %>
-  <%= link_to 'Edit', edit_friend_path(friend) %>
-  <%= link_to 'Delete', friend, confirm: 'Are you sure you want to lose a friend?', method: :delete, class: 'destroy' %>
+  <h3><%= friend.ask %><%= link_to 'Delete', friend, confirm: 'Are you sure you want to lose a friend?', method: :delete, class: 'destroy btn btn-link pull-right' %> </h3>
+  
 </div>

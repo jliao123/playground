@@ -13,13 +13,9 @@
 
 
   <div class="form-group">
-    <%= f.label "Name" %>
-    <%= f.text_field :name, class: 'form-control', placeholder: 'Name of space', required: 'true'%>
-  </div>
-
-  <div class="form-group">
     <%= f.label "What you want done" %>
-    <%= f.text_area :ask, class: 'form-control', placeholder: 'Tell us your vision for this space?', required: 'true'%>
+    <%= f.text_area :ask, id: 'ask_input', class: 'form-control', placeholder: 'Tell us your vision for this space?', required: 'true'%>
+
   </div>
 
   <div class="form-group">
@@ -28,7 +24,9 @@
   </div>
 
   <div class="form-group">
-    <%= f.submit 'Add', class: 'btn btn-block btn-primary' %>
+
+   <button type="submit" id="submit" class="btn btn-primary btn-block save" data-loading-text="Saving...">  Save </button>
+       
     <%= link_to 'Nevermind', friends_path, class: 'btn btn-block btn-default' %>
   </div>
 
@@ -36,5 +34,48 @@
 
 
 <% end %>
+
+
+<script type="text/javascript">
+
+$( document ).ready(function() {
+
+  var $input = $('textarea'),
+  $register = $('#submit');
+
+  $register.attr('disabled', true);
+  $input.keyup(function() {
+      var trigger = false;
+      $input.each(function() {
+          if (!$(this).val()) {
+              trigger = true;
+          }
+      });
+      trigger ? $register.attr('disabled', true) : $register.removeAttr('disabled');
+  });
+
+  $('.save').on('click', function() {
+      var $this = $(this);
+      $this.button('loading');
+      
+  });
+
+
+
+
+
+
+
+});
+  
+
+
+
+
+
+</script>
+
+
+ 
 
 
