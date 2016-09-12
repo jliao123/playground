@@ -35,9 +35,9 @@ class CompleteController < ApplicationController
 				pdf.text @friends[counter].name
 				pdf.text @friends[counter].ask
 				
-				if @friends[counter].avatar.url(:original)?
-					pdf.image open @friends[counter].avatar.url(:original)
-				end	
+		
+				pdf.image open @friends[counter].avatar.url(:original)?
+		
 				
 				counter = counter + 1
 			end
