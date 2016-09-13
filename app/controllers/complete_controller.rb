@@ -57,7 +57,7 @@ class CompleteController < ApplicationController
 	    end
 
 	     #delete user
-	    @user.destroy
+	    Appid.find_by_session(session.id).destroy
 
 
 		# redirect_to '/pdfs/myfile.pdf'
