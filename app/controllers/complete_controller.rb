@@ -20,6 +20,7 @@ class CompleteController < ApplicationController
 	      puts "p: "
 	      puts p
 	      @friends.push(Friend.find(p))
+	      Friend.find(p).destroy #kill from s3
 	      puts "@friends"
 	      puts @friends
 	    end
@@ -48,7 +49,8 @@ class CompleteController < ApplicationController
 		# UserMailer.welcome("jackieoliao@gmail.com", @friend.avatar.url(:medium), @friend.name).deliver_now
 
 	    InvitationMailer.invite().deliver_now
-
+	    #delete user
+	    @user.destroy
 
 
 		# redirect_to '/pdfs/myfile.pdf'
