@@ -3,10 +3,10 @@ require "prawn"
 class CompleteController < ApplicationController
   	def index
 
-  		puts "I'm here"
+  		puts "I'm in complete controller"
   		
 
-  		@user = Appid.find_by_session(request.session_options[:id]) #find user
+  		@user = Appid.find_by_session(session.id) #find user
 
   		@user.email = params[:appid][:email]
   		@user.name = params[:appid][:name]

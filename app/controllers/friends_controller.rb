@@ -5,14 +5,14 @@ class FriendsController < ApplicationController
   # GET /friends.json
   def index
     # @friends = Friend.all
-    @user = Appid.find_by_session(request.session_options[:id])
+    @user = Appid.find_by_session(session.id)
 
     if @user == nil #if it's a new app, save into "Appid"
-      #redirect_to "?app=" + request.session_options[:id]
+      #redirect_to "?app=" + session.id
       @user = Appid.new
-      @user.session = request.session_options[:id]
+      @user.session = session.id
       @user.save
-      puts "New user created!"
+      puts "New user created! (new session id)"
       puts @user
     end
 
@@ -58,7 +58,7 @@ class FriendsController < ApplicationController
     @friend.save
     friend_id = @friend.id
 
-    @user = Appid.find_by_session(request.session_options[:id])
+    @user = Appid.find_by_session(session.id)
     @user.spaceids.push(friend_id)
     @user.save
 
@@ -93,7 +93,7 @@ class FriendsController < ApplicationController
   # DELETE /friends/1
   # DELETE /friends/1.json
   def destroy
-    @user = Appid.find_by_session(request.session_options[:id])
+    @user = Appid.find_by_session(session.id)
     @user.spaceids = @user.spaceids - [@friend.id]
     @user.save
     @friend.destroy
