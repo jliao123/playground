@@ -25,7 +25,7 @@
 
   <div class="form-group">
 
-   <button type="button" id="submit" class="btn btn-primary btn-block save" data-loading-text="Saving...">  Save </button>
+   <button type="submit" id="submit" class="btn btn-primary btn-block save" data-loading-text="Saving..." onclick="return kickStart();">  Save </button>
        
     <%= link_to 'Nevermind', friends_path, class: 'btn btn-block btn-default' %>
   </div>
@@ -39,6 +39,13 @@
 
 
 <script type="text/javascript">
+
+  function kickStart(){
+         var $this = $(this);
+      $this.button('loading');
+      $('.loading-text').css("visibility","visible"); 
+      return true;
+  }
 
 $( document ).ready(function() {
 
@@ -56,12 +63,7 @@ $( document ).ready(function() {
       trigger ? $register.attr('disabled', true) : $register.removeAttr('disabled');
   });
 
-  $('.save').on('click', function() {
-      var $this = $(this);
-      $this.button('loading');
-      $('.loading-text').css("visibility","visible"); 
-      setTimeout(new_friend.submit(), 10);
-  });
+
 
 
 
