@@ -43,7 +43,7 @@
   </div>
 
   <div class="form-group">
-   <button type="submit" id="contact-submit" class="btn btn-success btn-block save" >  Submit </button>
+   <button type="submit" id="contact-submit" class="btn btn-success btn-block save" data-loading-text="Sending..." >  Submit </button>
   </div>
 
 <% end %>
@@ -75,6 +75,13 @@ $( document ).ready(function() {
       });
       trigger ? $register.attr('disabled', true) : $register.removeAttr('disabled');
   });
+
+    $('.save').on('click', function() {
+      var $this = $(this);
+      $this.button('loading');
+      
+  });
+
 
 });
   

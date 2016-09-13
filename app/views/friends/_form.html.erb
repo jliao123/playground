@@ -30,6 +30,8 @@
     <%= link_to 'Nevermind', friends_path, class: 'btn btn-block btn-default' %>
   </div>
 
+  <h5 style="visibility:hidden" class="loading-text"> Hang tight! Your image is saving.<h5> 
+
 
 
 
@@ -57,7 +59,7 @@ $( document ).ready(function() {
   $('.save').on('click', function() {
       var $this = $(this);
       $this.button('loading');
-      
+      $('.loading-text').style.visibility = 'visible'
   });
 
 
