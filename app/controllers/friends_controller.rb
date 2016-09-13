@@ -59,6 +59,18 @@ class FriendsController < ApplicationController
     friend_id = @friend.id
 
     @user = Appid.find_by_session(session.id)
+
+    if @user == nil #for what ever reason there is no user
+      @user = Appid.new
+      @user.session = session.id
+      @user.save
+      puts "New user created in create action! (new session id)"
+      puts @user
+    end
+    puts "user"
+    puts @user
+    puts "sessionid"
+    puts session.id
     @user.spaceids.push(friend_id)
     @user.save
 
